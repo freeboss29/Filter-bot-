@@ -159,7 +159,7 @@ async def start(client: Client, message):
                 )
             ],
             [
-                InlineKeyboardButton("• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"),
+                InlineKeyboardButton("• ᴇᴀʀɴ •", callback_data="earn"),
                 InlineKeyboardButton("• ꜱᴘᴇᴄɪᴀʟ •", callback_data="special"),
             ],
             [
@@ -196,7 +196,7 @@ async def start(client: Client, message):
                 )
             ],
             [
-                InlineKeyboardButton("• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"),
+                InlineKeyboardButton("• ᴇᴀʀɴ •", callback_data="earn"),
                 InlineKeyboardButton("• ꜱᴘᴇᴄɪᴀʟ •", callback_data="special"),
             ],
             [
@@ -416,12 +416,6 @@ async def start(client: Client, message):
                     InlineKeyboardButton(text="✅ ᴠᴇʀɪꜰʏ ✅", url=verify),
                     InlineKeyboardButton(text="ʜᴏᴡ ᴛᴏ ᴠᴇʀɪꜰʏ❓", url=howtodownload),
                 ],
-                [
-                    InlineKeyboardButton(
-                        text="😁 ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ - ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ 😁",
-                        callback_data="getpremium",
-                    ),
-                ],
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             if await db.user_verified(user_id):
@@ -460,18 +454,12 @@ async def start(client: Client, message):
                 file_size=get_size(file.file_size),
                 file_caption=file.caption,
             )
-            btn = [
-                [
-                    InlineKeyboardButton(
-                        "✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}"
-                    )
-                ]
-            ]
+            
             toDel = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file.file_id,
                 caption=f_caption,
-                reply_markup=InlineKeyboardMarkup(btn),
+                
             )
             files_to_delete.append(toDel)
 
@@ -518,18 +506,12 @@ async def start(client: Client, message):
         file_size=get_size(files.file_size),
         file_caption=files.caption,
     )
-    btn = [
-        [
-            InlineKeyboardButton(
-                "✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file_id}"
-            )
-        ]
-    ]
+    
     toDel = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup(btn),
+        
     )
     delCap = "<i>ʏᴏᴜʀ ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ {} ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ᴠɪᴏʟᴀᴛɪᴏɴs!</i>".format(
         f"{FILE_AUTO_DEL_TIMER / 60} ᴍɪɴᴜᴛᴇs"
@@ -1537,4 +1519,5 @@ async def reset_group_command(client, message):
     reply_markup = InlineKeyboardMarkup(btn)
     await save_default_settings(grp_id)
     await message.reply_text("ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ʀᴇꜱᴇᴛ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ...")
+
 
