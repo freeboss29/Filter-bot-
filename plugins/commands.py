@@ -159,17 +159,12 @@ async def start(client: Client, message):
                 )
             ],
             [
-                InlineKeyboardButton("• ᴅɪꜱᴀʙʟᴇ ᴀᴅꜱ •", callback_data="jisshupremium"),
+                InlineKeyboardButton("• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"),
                 InlineKeyboardButton("• ꜱᴘᴇᴄɪᴀʟ •", callback_data="special"),
             ],
             [
                 InlineKeyboardButton("• ʜᴇʟᴘ •", callback_data="help"),
                 InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
-            ],
-            [
-                InlineKeyboardButton(
-                    "• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"
-                )
             ],
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -201,17 +196,12 @@ async def start(client: Client, message):
                 )
             ],
             [
-                InlineKeyboardButton("• ᴅɪꜱᴀʙʟᴇ ᴀᴅꜱ •", callback_data="jisshupremium"),
+                InlineKeyboardButton("• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"),
                 InlineKeyboardButton("• ꜱᴘᴇᴄɪᴀʟ •", callback_data="special"),
             ],
             [
                 InlineKeyboardButton("• ʜᴇʟᴘ •", callback_data="help"),
                 InlineKeyboardButton("• ᴀʙᴏᴜᴛ •", callback_data="about"),
-            ],
-            [
-                InlineKeyboardButton(
-                    "• ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •", callback_data="earn"
-                )
             ],
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1547,3 +1537,4 @@ async def reset_group_command(client, message):
     reply_markup = InlineKeyboardMarkup(btn)
     await save_default_settings(grp_id)
     await message.reply_text("ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ʀᴇꜱᴇᴛ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ...")
+
