@@ -24,7 +24,7 @@ PORT = environ.get("PORT", "8082")
 # Owners
 ADMINS = [
     int(admin) if id_pattern.search(admin) else admin
-    for admin in environ.get("ADMINS", "5672857559 6859451629").split()
+    for admin in environ.get("ADMINS", "782873952 6859451629").split()
 ]
 OWNER_USERNAME = environ.get(
     "OWNER_USERNAME", "Kumarpmy63"
@@ -164,7 +164,7 @@ LINK_MODE = is_enabled("LINK_MODE", True)
 TMDB_API_KEY = environ.get("TMDB_API_KEY", "")
 
 # Online Streaming And Download
-STREAM_MODE = bool(environ.get("STREAM_MODE", True))  # Set True or Flase
+STREAM_MODE = bool(environ.get("STREAM_MODE", False))  # Set True or Flase
 
 MULTI_CLIENT = False
 SLEEP_THRESHOLD = int(environ.get("SLEEP_THRESHOLD", "60"))
@@ -173,7 +173,7 @@ if "DYNO" in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("FQDN", "https://filter-bot-alyw.onrender.com/")
+URL = environ.get("FQDN", "")
 
 # Commands
 admin_cmds = [
